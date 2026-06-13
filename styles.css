@@ -11,6 +11,12 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -27,7 +33,7 @@ body {
 main,
 footer {
   width: 100%;
-  max-width: 480px;
+  max-width: none;
   margin-inline: auto;
   overflow-x: hidden;
 }
@@ -51,7 +57,7 @@ a {
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 480px;
+  max-width: none;
   margin-inline: auto;
   z-index: 10;
   display: flex;
@@ -299,7 +305,7 @@ h1::after {
   grid-template-columns: 1fr;
   gap: 20px;
   align-items: center;
-  padding: 38px 16px 30px;
+  padding: 38px 0 30px;
   background: var(--black);
 }
 
@@ -307,6 +313,11 @@ h1::after {
   grid-column: 1 / -1;
   color: var(--yellow);
   margin-bottom: 0;
+  padding-inline: 16px;
+}
+
+.movie-copy {
+  padding-inline: 16px;
 }
 
 .movie-copy h2 {
@@ -324,32 +335,24 @@ h1::after {
 
 .movie-frame {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  width: calc(100% - 32px);
+  max-width: calc(100% - 32px);
+  margin-inline: 16px;
   overflow: hidden;
   border: 4px solid var(--yellow);
   background: var(--black);
-  box-shadow: 7px 7px 0 rgba(244, 234, 51, 0.28);
+  box-shadow: none;
 }
 
 .movie-frame::before {
-  content: "INTRODUCE MOVIE";
-  position: absolute;
-  left: 10px;
-  top: -16px;
-  z-index: 1;
-  background: var(--yellow);
-  color: var(--black);
-  padding: 5px 8px;
-  font-size: 11px;
-  font-weight: 1000;
+  content: none;
 }
 
 .movie-frame video {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 260px;
+  max-height: 220px;
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: var(--black);
@@ -550,7 +553,7 @@ footer p {
 
   .movie-frame video {
     height: auto;
-    max-height: 240px;
+    max-height: 220px;
     aspect-ratio: 16 / 9;
   }
 
