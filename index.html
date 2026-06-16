@@ -46,13 +46,13 @@
       <div class="section-label">MOVIE</div>
       <div class="movie-copy">
         <h2>紹介動画</h2>
-        <p>本家のCMを再現した紹介動画をご覧ください。</p>
+        <p>34番出口の雰囲気を、入る前に少しだけ。気になる違和感を探しながらご覧ください。</p>
       </div>
-      <div class="movie-frame">
-        <video controls playsinline preload="metadata">
-          <source src="./assets/introduce.MOV" type="video/quicktime">
-          お使いのブラウザでは動画を再生できません。
-        </video>
+      <div class="movie-frame" data-movie-frame>
+        <div class="movie-locked">
+          <strong>2026.6.26 10:00 公開予定</strong>
+          <span>紹介動画は公開日までお待ちください。</span>
+        </div>
       </div>
     </section>
 
@@ -72,7 +72,7 @@
         <h2>いつもの教室に、違和感が混ざる。</h2>
         <p>
           「34番出口」は、教室の中を進みながら異変の有無を見極める体験型のクラス参加企画です。
-          いつもと違う変化に気づいたら左ボタン、異変がなければ右ボタン。判断を間違えると、30番へ戻ります。
+          いつもと違う変化に気づいたら左、異変がなければ右。判断を間違えると、入口へ戻ります。
         </p>
       </div>
     </section>
@@ -96,7 +96,7 @@
         <article>
           <span class="rule-number">02</span>
           <h3>異変を見つけたら左</h3>
-          <p>異変があると判断したら、左のボタンを押してください。</p>
+          <p>少しでもおかしいと感じたら、左のボタンを押してください。</p>
         </article>
         <article>
           <span class="rule-number">03</span>
@@ -106,7 +106,7 @@
         <article>
           <span class="rule-number">04</span>
           <h3>34番出口を目指す</h3>
-          <p>正しい判断を続けて、34番出口から脱出しよう。</p>
+          <p>正しい判断を続けて、34番出口から脱出することが目的です。</p>
         </article>
       </div>
     </section>
@@ -130,7 +130,7 @@
       <div class="access-main">
         <div class="section-label">ACCESS</div>
         <h2>本館2F<br>3年4組</h2>
-        <p>黄色い外装が目印です。</p>
+        <p>QRコードからこのページを開いたら、場所を確認してそのままお越しください。</p>
       </div>
       <div class="access-panel">
         <p class="panel-title">EXIT ROUTE</p>
@@ -147,5 +147,18 @@
     <img src="./assets/logo.jpg" alt="34番出口 Exit34">
     <p>山梨県立甲府南高等学校　３年４組　クラス参加企画　©All rights reserved.</p>
   </footer>
+  <script>
+    (() => {
+      const publishAt = new Date("2026-06-26T10:00:00+09:00");
+      const frame = document.querySelector("[data-movie-frame]");
+      if (!frame || Date.now() < publishAt.getTime()) return;
+      frame.innerHTML = `
+        <video controls playsinline preload="metadata">
+          <source src="./assets/introduce.MOV" type="video/quicktime">
+          お使いのブラウザでは動画を再生できません。
+        </video>
+      `;
+    })();
+  </script>
 </body>
 </html>
