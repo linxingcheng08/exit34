@@ -305,6 +305,51 @@ h1::after {
   color: var(--yellow);
 }
 
+.anomalies {
+  padding: 42px 16px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.anomalies .section-label {
+  color: var(--yellow);
+}
+
+.anomaly-heading {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.anomaly-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(34px, 11vw, 54px);
+  line-height: 1;
+}
+
+.anomaly-heading p {
+  max-width: 780px;
+  color: var(--paper);
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 800;
+}
+
+.answer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 48px;
+  border: 3px solid var(--yellow);
+  background: var(--yellow);
+  color: var(--black);
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 1000;
+  text-decoration: none;
+}
+
 .movie-section {
   display: grid;
   grid-template-columns: 1fr;
